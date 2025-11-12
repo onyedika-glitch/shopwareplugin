@@ -1,9 +1,0 @@
-{
-  "name": "pasta-clean-carousel-storefront",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "production": "shopware-pwa-build || exit 0"
-  },
-  "devDependencies": {}
-}
