@@ -1,0 +1,28 @@
+{
+    "name": "pastaclean/frequently-bought-together",
+    "description": "Plugin to display frequently bought together products on product page",
+    "version": "11.11.3",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PastaClean",
+            "email": "info@pastaclean.com"
+        }
+    ],
+    "require": {
+        "shopware/core": "~6.6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "PastaClean\\FrequentlyBoughtTogether\\": "src/"
+        }
+    },
+    "extra": {
+        "shopware-plugin-class": "PastaClean\\FrequentlyBoughtTogether\\PastaCleanFrequentlyBoughtTogether",
+        "label": {
+            "de-DE": "Häufig zusammen gekauft",
+            "en-GB": "Frequently Bought Together"
+        }
+    }
+}

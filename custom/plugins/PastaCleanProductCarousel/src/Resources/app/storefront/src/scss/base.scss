@@ -1,0 +1,247 @@
+/* --- General / Mobile-first Carousel Styles --- */
+
+/* --- Mobile layout adjustments --- */
+@media (max-width: 768px) {
+  .pc-carousel-wrapper {
+    width: 100vw !important;
+    /* margin-left: calc(50% - 50vw) !important;*/
+    padding: 0 !important;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    /* max-width: none !important;*/
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .pc-slide {
+    width: 100%;
+    height: 70vh;
+  }
+  .pc-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    aspect-ratio: 1.7777777778;
+  }
+  .product-detail .product-image, .product-detail .product-image-gallery, .pc-carousel-wrapper {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+  .pc-track {
+    display: flex;
+    transition: transform 300ms ease;
+    will-change: transform;
+    overflow: hidden;
+  }
+  .pc-track > .pc-slide {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    min-width: 100%;
+    box-sizing: border-box;
+    height: 500px;
+  }
+  .pc-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 0;
+    position: static;
+    background: transparent;
+    z-index: 2;
+  }
+  .pc-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+  .pc-dot.active {
+    background: rgba(0, 0, 0, 0.8);
+  }
+  .pc-carousel-wrapper .product-image-gallery__button, .pc-carousel-wrapper .gallery-navigation, .pc-carousel-wrapper button:not(.pc-dot) {
+    display: none !important;
+  }
+  .pc-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 4;
+  }
+  .pc-left {
+    left: 8px;
+  }
+  .pc-right {
+    right: 8px;
+  }
+  .pc-slide img {
+    max-width: none;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .gallery-slider-thumbnails-controls {
+    display: none !important;
+  }
+  .gallery-slider-thumbnails {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    padding: 15px 0;
+  }
+  .gallery-slider-thumbnails-item {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    background: transparent !important;
+    padding: 0 !important;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .gallery-slider-thumbnails-item img {
+    display: none;
+  }
+  .gallery-slider-thumbnails-item.tns-nav-active {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: rgba(0, 0, 0, 0.8);
+  }
+  .pc-carousel-wrapper {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    overflow: hidden;
+  }
+}
+/* --- General image sizing (global) --- */
+.gallery-slider-item {
+  flex: 0 0 100% !important;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background-color: #f8f8f8;
+}
+.gallery-slider-item img.gallery-slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.03);
+}
+/* --- Hide default arrows --- */
+.base-slider .gallery-slider-controls {
+  display: none !important;
+}
+/* Debug outline (optional) */
+.product-detail-media.debug-outline {
+  outline: 3px dashed rgba(255, 0, 0, 0.6) !important;
+}
+
+.image-zoom-modal img,
+.modal .gallery-slider-image,
+.image-zoom-modal .gallery-slider-item .image-zoom-container  img {
+  max-width: 80vw !important;  /* wider — nearly full screen */
+  max-height: 100vh !important; /* taller but still leaves room for padding */
+  height: auto !important;
+  object-fit: contain !important;
+  transform: scale(1.03);
+  margin: auto !important;      /* centers image nicely */
+  border-radius: 10px !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+.image-zoom-modal,
+.modal.image-zoom-modal {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: env(safe-area-inset-top,12px) env(safe-area-inset-left,12px) env(safe-area-inset-bottom,12px) env(safe-area-inset-right,12px) !important;
+  background: rgba(255,255,255,0.98) !important;
+}
+
+
+.image-zoom-modal .gallery-slider-item,
+.modal.image-zoom-modal .gallery-slider-item,
+.image-zoom-modal .image-zoom-container,
+.modal.image-zoom-modal .image-zoom-container {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+
+.image-zoom-modal img,
+.modal.image-zoom-modal img,
+.image-zoom-container img {
+  width: auto !important;
+  height: auto !important;
+  max-width: 96vw !important;
+  max-height: calc(100vh - 64px) !important; /* room for header/controls */
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  transform: none !important;
+}
+
+/* Use dynamic viewport where supported (fixes mobile address-bar shrink) */
+@supports (height: 100dvh) {
+  .image-zoom-modal img,
+  .modal.image-zoom-modal img,
+  .image-zoom-container img {
+    max-height: calc(100dvh - 64px) !important;
+  }
+}
+
+
+/* --- Responsive visibility control --- */
+.hidden-desktop {
+  display: block;
+}
+.hidden-mobile {
+  display: none;
+}
+/* Hide mobile carousel on larger screens and show default gallery */
+@media (min-width: 769px) {
+  /* Ensure the mobile-only carousel wrapper is hidden on desktop */
+  .hidden-desktop {
+    display: none !important;
+  }
+  .hidden-mobile {
+    display: block !important;
+  }
+  .pc-carousel-wrapper {
+    display: none !important;
+  }
+}
+/* Keep carousel full width on mobile */
+@media (max-width: 768px) {
+  .pc-carousel-wrapper {
+    width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important;
+    overflow: hidden;
+  }
+}
+.pac-container {
+  z-index: 10000;
+}
+.ninja-progress-bar {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.ninja-progress-bar .progress {
+  padding: 0 1rem;
+  height: auto;
+  font-size: 1rem;
+}
